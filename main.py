@@ -27,7 +27,7 @@ def main():
                 run = False
                 pygame.quit()
         draw_window()
-    
+    print("This is a big ol' bug")
     main()
 
 
