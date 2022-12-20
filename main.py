@@ -15,6 +15,7 @@ FPS = 60
 def draw_window():
     WIN.fill(DARK_GREY)
     pygame.display.update()
+    
 
 
 def main():
@@ -27,6 +28,7 @@ def main():
                 run = False
                 pygame.quit()
         draw_window()
+        print("WTF is this doing here")
     
     main()
 
