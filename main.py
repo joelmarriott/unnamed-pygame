@@ -15,12 +15,18 @@ FPS = 60
 
 
 def draw_world():
-    draw_tile_line(300,200,5)
+    draw_tile_line(527,137,3)
+    draw_tile_line(452,137,5)
+    draw_tile_line(300,175,7)
+    draw_tile_line(338,156,7)
+    draw_tile_line(376,137,7)
+    draw_tile_line(300,213,5)
+    draw_tile_line(300,251,3)
 
 
 def draw_tile_line(x, y, amount):
     tiles = 0
-    while tiles <= amount:
+    while tiles < amount:
         place_tile(x, y)
         tiles += 1
         x += 38
