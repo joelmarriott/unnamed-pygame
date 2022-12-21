@@ -21,12 +21,17 @@ group = pygame.sprite.Group(
 
 
 def draw_window():
+    "Draw the game window"
     WIN.fill(DARK_GREY)
+
+    ## Game level
     map.update(map)
     map.draw(map, WIN)
 
+    ## Players
     group.update()
     group.draw(WIN)
+
     pygame.display.update()
 
 
