@@ -4,22 +4,22 @@ from tile import Tile
 
 class Map:
     def __init__(self, width, height, origin):
-        self.top_image = pygame.image.load(os.path.join('Assets', 'top.png'))
-        self.left_image = pygame.image.load(os.path.join('Assets', 'left.png'))
-        self.right_image = pygame.image.load(os.path.join('Assets', 'right.png'))
-        self.cursor = pygame.image.load(os.path.join('Assets', 'cursor.png'))
+        self.top_image = pygame.image.load(os.path.join('Assets', 'Tile.png'))
+        self.left_image = pygame.image.load(os.path.join('Assets', 'TileLeft.png'))
+        self.right_image = pygame.image.load(os.path.join('Assets', 'TileRight.png'))
+        self.cursor = pygame.image.load(os.path.join('Assets', 'Hover.png'))
         # create the Mask for the top image
         # (only activate when the selected pixel is non-transparent)
         self.top_image_mask = pygame.mask.from_surface(self.top_image)
 
-        origin[0] -= 20*width
-        origin[1] += 5*height
+        origin[0] -= 38*width
+        origin[1] += 19*height
         self.map = []
         for x in range(width):
             for y in range(height):
                 tile_x, tile_y = origin
-                tile_x += 20*x + 20*y
-                tile_y += 10*y - 10*x
+                tile_x += 38*x + 38*y
+                tile_y += 19*y - 19*x
                 self.map.append(Tile(tile_x, tile_y))
                 # draw the sides textures if needed
                 if not x:

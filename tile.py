@@ -5,7 +5,7 @@ class Tile:
         self.x = x
         self.y = y
         # make rect to check for rough collision
-        self.rect = pygame.Rect(x, y, 40, 48)
+        self.rect = pygame.Rect(x, y, 78, 39)
 
         self.left = False
         self.right = False
