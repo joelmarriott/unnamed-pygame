@@ -7,13 +7,33 @@ WIDTH, HEIGHT = 900, 500
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Unnamed Pygame")
 
+TILE = pygame.image.load(os.path.join("Assets", "Tile.png"))
+
 DARK_GREY = (50,50,50)
 
 FPS = 60
 
 
+def draw_world():
+    draw_tile_line(300,200,5)
+
+
+def draw_tile_line(x, y, amount):
+    tiles = 0
+    while tiles <= amount:
+        place_tile(x, y)
+        tiles += 1
+        x += 38
+        y += 19
+
+
+def place_tile(x,y):
+    WIN.blit(TILE, (x, y))
+
+
 def draw_window():
     WIN.fill(DARK_GREY)
+    draw_world()
     pygame.display.update()
 
 
