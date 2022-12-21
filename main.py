@@ -19,13 +19,12 @@ group = pygame.sprite.Group(
     Player(3.0, pygame.Color('orange'), map.map[0].x+35, map.map[0].y+15),
     Player(4.5, pygame.Color('dodgerblue'), map.map[0].x+35, map.map[0].y+15))
 
-
 def draw_window():
     "Draw the game window"
     WIN.fill(DARK_GREY)
 
     ## Game level
-    map.update(map)
+    move = map.update(map)
     map.draw(map, WIN)
 
     ## Players
@@ -33,11 +32,13 @@ def draw_window():
     group.draw(WIN)
 
     pygame.display.update()
+    return move
 
 
 def main():
     clock = pygame.time.Clock()
     run = True
+    move = False
 
     while run:
         clock.tick(FPS)
@@ -46,9 +47,13 @@ def main():
                 run = False
                 pygame.quit()
             if event.type == pygame.MOUSEBUTTONDOWN:
+                if not move:
+                    break
+                print(str(move))
                 for player in group.sprites():
-                    player.set_target(pygame.mouse.get_pos())
-        draw_window()
+                    player.set_target(move)
+                move = False
+        move = draw_window()
     main()
 
 

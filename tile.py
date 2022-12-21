@@ -11,7 +11,7 @@ class Tile:
         self.right = False
         self.selected = False
 
-    def update(self, map):
+    def update(self, map, move):
         "Check for hover and set selected if so"
         self.selected = False
         x, y = pygame.mouse.get_pos()
@@ -22,6 +22,11 @@ class Tile:
             ## Exact mask of image using (lack of) transparency
             if map.top_image_mask.get_at((x, y)):
                 self.selected = True
+                move = (self.rect.x+30, self.rect.y+15)
+        if move:
+            return move
+        else:
+            return False
 
     def draw(self, map, screen):
         "Draw the tile on the screen"
