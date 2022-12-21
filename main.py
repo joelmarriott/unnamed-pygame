@@ -15,7 +15,7 @@ FPS = 60
 
 map = Map(7, 7, [420, 100])
 group = pygame.sprite.Group(
-    Player(1.5, pygame.Color('white'), map.map[0].x+35, map.map[0].y+15),
+    Player(1.5, pygame.Color('red'), map.map[0].x+35, map.map[0].y+15),
     Player(3.0, pygame.Color('orange'), map.map[0].x+35, map.map[0].y+15),
     Player(4.5, pygame.Color('dodgerblue'), map.map[0].x+35, map.map[0].y+15))
 
