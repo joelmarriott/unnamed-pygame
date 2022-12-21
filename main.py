@@ -1,5 +1,6 @@
 import os
 import pygame
+from map import Map
 
 pygame.init()
 
@@ -11,9 +12,12 @@ DARK_GREY = (50,50,50)
 
 FPS = 60
 
+map = Map(7, 7, [420, 100])
 
 def draw_window():
     WIN.fill(DARK_GREY)
+    map.update(map)
+    map.draw(map, WIN)
     pygame.display.update()
 
 
