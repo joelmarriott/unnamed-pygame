@@ -40,12 +40,3 @@ class Map:
         "Re-draw tiles onto the screen"
         for tile in sorted(self.map, key=lambda tile: tile.selected):
             tile.draw(map, screen)
-
-    def get_target(self, pos):
-        "Find a valid target tile"
-        x, y = pos
-        for tile in self.map:
-            if x in range(tile.x-39, tile.x+39):
-                if y in range(tile.y-20, tile.y+20):
-                    pos = (tile.x, tile.y)
-        return pos
